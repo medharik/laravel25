@@ -8,5 +8,6 @@ class Article extends Model
 {
     // les donnees qu'on va saisir :
     protected $fillable = ['libelle','prix'];
+//ok
 
 }

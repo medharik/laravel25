@@ -7,7 +7,7 @@
     <title>liste des articles</title>
 </head>
 <body>
-    <h1>liste des articles</h1>
+    <h1>liste des articles :</h1>
    <table>
     <thead>
         <tr>

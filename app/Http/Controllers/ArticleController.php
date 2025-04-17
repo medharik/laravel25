@@ -10,7 +10,7 @@ class ArticleController extends Controller
     /**
      * Display a listing of the resource (article).
      * URI : /articles
-     * methode : GET (cad dans le lien du navigateur)
+     * methode : GET (cad dans le lien du navigateur);
      */
     public function index()
     {

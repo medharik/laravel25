@@ -30,7 +30,7 @@ Route::get('chaise/create',[ChaiseController::class,'create'])->name('');
 Route::get('chaise/liste',[ChaiseController::class,'liste'])->name('');
 
 Route::get('/pc/nouveau', [OrdinateurController::class, 'create']);
-Route::post('/pc/store', [OrdinateurController::class, 'store']);
+Route::post('/pc/store', [OrdinateurController::class, 'store']);;
 
 Route::resource('phones', PhoneContoller::class);
 Route::resource('boutiques', BoutiqueController::class);

@@ -7,7 +7,7 @@
     <title>Nouvel article</title>
 </head>
 <body>
-    <h1>Nouveau</h1>
+    <h1>Nouveau :</h1>
     <form action="/articles" method="post">
         @csrf
         <input type="text" name="libelle" placeholder="Entrer un libelle">
