@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BoutiqueController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\ChaiseController;
@@ -33,4 +34,9 @@ Route::post('/pc/store', [OrdinateurController::class, 'store']);
 
 Route::resource('phones', PhoneContoller::class);
 Route::resource('boutiques', BoutiqueController::class);
+//permet de creer automatiquement 7 liens (chaque lien execute une fontion du controller)
+
+Route::resource('articles', ArticleController::class);
+
+
 Route::apiResource('/api/boutiques', BoutiqueController::class);

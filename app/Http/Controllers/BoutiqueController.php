@@ -36,14 +36,14 @@ class BoutiqueController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            "email"=>"required|unique:boutiques|email",
-            'tel'=>'required|min:2'
-        ]);
+        // $request->validate([
+        //     "email"=>"required|unique:boutiques|email",
+        //     'tel'=>'required|min:2'
+        // ]);
 
-        Boutique::create($request->all());
-        // return view ("boutiques/index");
-        return redirect('/boutiques');
+        $boutique = Boutique::create($request->only(['nom', 'email', 'adresse', 'tel']));
+
+        return response()->json($boutique, 201);
     }
 
     /**
