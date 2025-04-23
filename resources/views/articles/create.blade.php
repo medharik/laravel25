@@ -9,6 +9,7 @@
 <body>
     <h1>Nouveau :</h1>
     <form action="/articles" method="post">
+
         @csrf
         <input type="text" name="libelle" placeholder="Entrer un libelle">
         <input type="text" name="prix" placeholder="Entrer un prix">

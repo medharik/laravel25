@@ -1,0 +1,14 @@
+resource : boutiques, produits, articles, etc
+1- creer le modele Article (qui permet de gerer la table articles) et 
+la table articles (plut tot on creer le code qui cree cette table : migration)
+: on utilise la commande php artisan make:model Article -m  ( pour creer le model et la migration)
+pour lancer la migration : php artisan migrate   (permet de creer la table articles)
+2- creer le controleur ArticleController (qui permet de gerer les requetes HTTP , les routes, les actions, etc)
+: on utilise la commande 
+php artisan make:controller ArticleController -r 
+(je vais partager le code du controller )
+3- generer les liens de navigation (routes) entre les controleurs et les vues
+: dans le fichier web.php, on ajoute la ligne suivante 
+Route::resource(name: 'articles', ArticleController::class);
+NB  : pour verifier la creation de ces liens (route) , on utilise la commande suivante : 
+php artisan route:list

@@ -1,0 +1,6 @@
+pour ajouter une colonne photo :
+php artisan make:migration add_photo_to_produits --table=produits
+creer un raccourcis entre  :
+C:\laragon\www\appdi2\public\storage link has been connected to [C:\laragon\www\appdi2\storage\app/public]
+
+php artisan storage:link
