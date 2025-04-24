@@ -5,6 +5,7 @@ use App\Http\Controllers\BoutiqueController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\ChaiseController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\OrdinateurController;
 use App\Http\Controllers\PhoneContoller;
 use App\Http\Controllers\ProduitController;
@@ -31,12 +32,13 @@ Route::get('chaise/liste',[ChaiseController::class,'liste'])->name('');
 
 Route::get('/pc/nouveau', [OrdinateurController::class, 'create']);
 Route::post('/pc/store', [OrdinateurController::class, 'store']);;
-
+// route('documents.index') <=> url('documents/index')
 Route::resource('phones', PhoneContoller::class);
 Route::resource('boutiques', BoutiqueController::class);
 //permet de creer automatiquement 7 liens (chaque lien execute une fontion du controller)
 
 Route::resource('articles', ArticleController::class);
+Route::resource('documents', DocumentController::class);
 
 
 Route::apiResource('/api/boutiques', BoutiqueController::class);

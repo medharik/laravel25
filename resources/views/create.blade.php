@@ -17,11 +17,14 @@
     <h1>{{$message}}</h1>
 
   <div class="container">
-   <div class="alert alert-danger">
-    @foreach ($errors->all() as $e)
-<li>{{$e}}  </li>
-    @endforeach
-   </div>
+    @if ($errors->any())
+
+    <div class="alert alert-danger">
+        @foreach ($errors->all() as $e)
+        <li>{{$e}}  </li>
+        @endforeach
+    </div>
+    @endif
     <form action="/enregister" method="post" enctype="multipart/form-data" class="row g-3 needs-validation" novalidate>
         @csrf
            <div class="col-md-4">
@@ -97,7 +100,7 @@
         event.stopPropagation()
       }
 
-      form.classList.add('was-validated')
+    //  form.classList.add('was-validated')
     }, false)
   })
 })()
