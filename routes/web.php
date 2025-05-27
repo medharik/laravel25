@@ -6,10 +6,13 @@ use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\ChaiseController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\FactureController;
+use App\Http\Controllers\MatiereController;
 use App\Http\Controllers\OrdinateurController;
 use App\Http\Controllers\PhoneContoller;
 use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\SmartphoneController;
+use App\Http\Controllers\UtilisateurController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -39,6 +42,10 @@ Route::resource('boutiques', BoutiqueController::class);
 
 Route::resource('articles', ArticleController::class);
 Route::resource('documents', DocumentController::class);
+Route::resource('utilisateurs', UtilisateurController::class);
+Route::resource('matieres', MatiereController::class);
+Route::resource('clients', ClientController::class);
+Route::resource('factures', FactureController::class);
 
 
 Route::apiResource('/api/boutiques', BoutiqueController::class);

@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Client;
 use Illuminate\Http\Request;
 
-class ClientController extends Controller
+class EtudiantController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $clients = Client::all();
-        return view('clients.index', compact('clients'));
-
+        //
     }
 
     /**
@@ -22,7 +19,6 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('clients.create');
         //
     }
 
@@ -31,8 +27,6 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-       Client::create($request->all());
-       return redirect()->route('clients.index')->with('notice','client ajoute avec succes');
         //
     }
 
@@ -41,9 +35,7 @@ class ClientController extends Controller
      */
     public function show(string $id)
     {
-        $client = Client::find($id);
-
-        return view('clients.show', compact('client'));
+        //
     }
 
     /**
@@ -51,7 +43,7 @@ class ClientController extends Controller
      */
     public function edit(string $id)
     {
-
+        //
     }
 
     /**
