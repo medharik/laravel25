@@ -3,7 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 @endsection
 @section('titre')
-    Liste des factures
+    Liste des {{$nombre}}  facture{{$nombre>1 ? 's':''}}
 @endsection
 @section('content')
 <a href="{{route('factures.create')}}" class="btn btn-primary">Nouvelle facture</a>

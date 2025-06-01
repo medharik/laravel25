@@ -47,5 +47,11 @@ Route::resource('matieres', MatiereController::class);
 Route::resource('clients', ClientController::class);
 Route::resource('factures', FactureController::class);
 
+// la route pour afficher la page de creation de facture
+Route::get('facture/creation/{id}', [FactureController::class,'creer_facture'])->name('factures.creer_facture');
+//la route pour enregister les produits dans la facture
+
+Route::post('/lignefacture', [FactureController::class,'store_ligne_facture'])->name('factures.store_ligne_facture');
+
 
 Route::apiResource('/api/boutiques', BoutiqueController::class);

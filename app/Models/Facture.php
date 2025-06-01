@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Facture extends Model
 {
@@ -16,5 +17,17 @@ class Facture extends Model
     public function client(): BelongsTo
     {
         return $this->belongsTo(Client::class);
+    }
+    /**
+     * The produits that belong to the Facture
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function produits(): BelongsToMany
+    {
+        return $this->belongsToMany(Produit::class, 'facture_produit', 'facture_id', 'produit_id')
+        ->withPivot('quantite')
+        ->withTimestamps();
+        ;
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use App\Models\Facture;
+use App\Models\Produit;
 use Illuminate\Http\Request;
 
 class FactureController extends Controller
@@ -15,8 +16,9 @@ class FactureController extends Controller
     {
         $factures = Facture::paginate(2);
         $liens=$factures->links();
+        $nombre=Facture::count();
         // dd($liens);
-        return view('factures.index', compact('factures'));
+        return view('factures.index', compact('factures','nombre'));
 
     }
 
@@ -86,4 +88,18 @@ $facture_autres=Facture::where('client_id',$facture->client_id)->whereNot('id',$
     {
         //
     }
+
+  public function    creer_facture(string $id){
+   $facture=Facture::find($id);
+   $produits=Produit::all();
+
+   return view('factures.creer',compact('facture','produits'));
+  }
+  public function    store_ligne_facture(Request $request){
+    $facture=Facture::find($request->facture_id);
+    $facture->produits()->attach($request->produit_id, [  'quantite' => $request->quantite]);
+
+
+   return redirect()->route('factures.creer_facture',$request->facture_id);
+  }
 }
